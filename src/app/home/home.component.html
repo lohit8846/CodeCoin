@@ -1,3 +1,25 @@
-<p>
 
-</p>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row" ng-if= "posts!==undefined" *ngFor="let post of posts">
+      <div class="col-md-12">
+        <p>{{ post.company }}<p>
+      </div>
+      <div class="col-md-12">
+        <p>{{ post.img }}<p>
+      </div>
+      <div class="col-md-12">
+        <p>{{ post.amount}}<p>
+      </div>
+      <div class="col-md-12">
+        <p>{{ post.tags}}</p>
+      </div>
+      <div class="col-md-12">
+        <p>{{ post.submissions }}</p>
+      </div>
+      <div class="col-md-12">
+        <p><a (click)="routeSubmission(post.$key)">{{ post.details }}</a><p>
+      </div>
+    </div>
+  </div>
+</div>
