@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Http} from "@angular/http";
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
 
-  authenticate() {
+  constructor(private http: Http) {
+  }
 
+  loginGithub() {
+    this.http.get('localhost:5000/auth/github').subscribe(
+      res => {
+        console.log(res)
+      },
+      err => {
+        console.log(err)
+      }
+    )
   }
 }
