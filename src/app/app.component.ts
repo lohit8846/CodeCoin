@@ -12,6 +12,7 @@ export class AppComponent {
   }
 
   loginGithub() {
+    console.log("here")
     this.http.get('localhost:5000/auth/github').subscribe(
       res => {
         console.log(res)
